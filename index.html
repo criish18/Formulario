@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con múltiples páginas</title>
+    <link rel="stylesheet" href="css/Style.css">
+	<script src="https://kit.fontawesome.com/8bf23f1018.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+		
+	<div class="container">
+		<header>REGISTRO DE PACIENTES</header>
+
+		<div class="progress-bar">
+			<div class="paso">
+				<p>Datos Personales</p>
+				<div class="num">
+					<span>1</span>
+				</div>
+				<div class="check fas fa-check"></div>
+			</div>
+			<div class="paso">
+				<p>Familiares</p>
+				<div class="num">
+					<span>2</span>
+				</div>
+				<div class="check fas fa-check"></div>
+			</div>
+
+			<div class="paso">
+				<p>Cond. Pre-Exis.</p>
+				<div class="num">
+					<span>3</span>
+				</div>
+				<div class="check fas fa-check"></div>
+			</div>
+
+			<div class="paso">
+				<p>Int. Realizados</p>
+				<div class="num">
+					<span>4</span>
+				</div>
+				<div class="check fas fa-check"></div>
+			</div>
+
+			<div class="paso">
+				<p>Datos del Paciente</p>
+				<div class="num">
+					<span>5</span>
+				</div>
+				<div class="check fas fa-check"></div>
+			</div>
+			
+		</div>
+
+		<div class="form-princ">
+			<form id="registro">
+				<!-- Página 1: Datos Personales -->
+				<div class="pagina movPag">
+					<div class="titulo"><h3>Datos Personales</h3></div>
+					<div class="campo-grid">
+						<div class="label">Nombre(s): <b class="error" id="nombres-error"></b> </div>
+						<input type="text" id="nombres" placeholder="Nombres">
+					</div>
+					<div class="campo-grid">
+						<div class="label">Apellidos: <b class="error" id="apellido-error"></b> </div>
+						<input type="text" id="apellido" placeholder="Apellidos">
+					</div>
+					<div class="campo-grid">
+						<div class="label">Fecha Nacimiento: <b class="error" id="fechaNac-error"></b> </div>
+						<input type="date" id="fechaNac" max="2023-12-31">
+					</div>
+					<div class="campo-grid">
+						<div class="label">Nacionalidad: <b class="error" id="nacionalidad-error"></b> </div>
+						<input type="text" id="nacionalidad" placeholder="Nacionalidad">
+					</div>
+					<div class="campo-grid">
+						<div class="label">Numero de Telefono: <b class="error" id="numero-error"></b> </div>
+						<input type="text" id="numero" placeholder="XXX - XXX - XXXX">
+					</div>
+					<div class="campo-grid">
+						<div class="label">Sexo:</div>
+						<select id="sexo">
+							<option value="-1" disabled selected>Seleccione</option>
+							<option value="0">Masculino</option>
+							<option value="1">Femenino</option>
+						</select>
+					</div>
+					<div class="campo-grid">
+						<div class="label">Tipo de Sangre:</div>
+						<select id="tipoS">
+							<option value="-1" disabled selected>Seleccione</option>
+							<option value="A+">A+</option>
+							<option value="A-">A-</option>
+							<option value="O+">O+</option>
+							<option value="O-">O-</option>
+							<option value="AB+">AB+</option>
+							<option value="AB-">AB-</option>
+
+						</select>
+					</div>
+					<div class="campo sigPag">
+						<button>Siguiente</button>
+					</div>
+				</div>
+
+				<!-- Página 2: Familiares -->
+				<div class="pagina">
+					<div class="titulo"><h3>Familiares</h3></div>
+					<div class="campo-grid">
+						<div class="label">Nombre(s): <b class="error" id="nombre-error"></b></div>
+						<input type="text" id="nombre" placeholder="Nombre">
+					</div>
+					<div class="campo-grid">
+						<div class="label">Parentesco:<b class="error" id="parentesco-error"></b> </div>
+						<input type="text" id="parentesco" placeholder="Parentesco">
+					</div>
+					<div class="campo-grid">
+						<div class="label">Edad:<b class="error" id="edad-error"></b> </div>
+						<input type="text" id="edad" placeholder="Edad">
+					</div>
+					<div class="campo-grid">
+						<div class="label">Sexo:</div>
+						<select id="sexo">
+							<option value="-1" disabled selected>Seleccione</option>
+							<option value="0">Masculino</option>
+							<option value="1">Femenino</option>
+						</select>
+					</div>
+					<div class="campo btns">
+						<button class="volver-pag1 volver">Atras</button>
+						<button class="adelante-pag3 adelante">Siguiente</button>
+					</div>
+				</div>
+
+				<!-- Página 3: Condiciones Pre-Existentes de Salud-->
+				<div class="pagina">
+					<div class="titulo"><h3>Condiciones Pre-existentes de Salud</h3></div>
+					<div class="campo-grid">
+						<div class="label">Enfermedad:<b class="error" id="enfermedad-error"></b> </div>
+						<input type="text" id="enfermedad" placeholder="Enfermedad">
+					</div>
+					<div class="campo-grid">
+						<div class="label">Tiempo con la enfermedad:<b class="error" id="tiempo-error"></b> </div>
+						<input type="text" id="tiempo" placeholder="X/dias/años">
+					</div>
+					<div class="campo-grid">
+						<div class="label">Detalle:<b class="error" id="detalle-error"></b> </div>
+						<textarea name="detalle" id="detalle"></textarea>
+					</div>
+					<div class="campo btns">
+						<button class="volver-pag2 volver">Atras</button>
+						<button class="adelante-pag4 adelante">Siguiente</button>
+					</div>
+				</div>
+
+				<!-- Página 4: Internamientos Realizados-->
+				<div class="pagina">
+					<div class="titulo"><h3>Internamientos Realizados</h3></div>
+					<div class="campo-grid">
+						<div class="label">Fecha:<b class="error" id="fecha-error"></b> </div>
+						<input type="date" id="fecha" max="2023-12-31">
+					</div>
+					<div class="campo-grid">
+						<div class="label">Centro Médico:<b class="error" id="centroMed-error"></b> </div>
+						<input type="text" id="centroMed" placeholder="Centro Medico">
+					</div>
+					<div class="campo-grid">
+						<div class="label">Diagnostico:<b class="error" id="diagnostico-error"></b> </div>
+						<textarea name="diagnostico" id="diagnostico"></textarea>
+					</div>
+					<div class="campo btns">
+						<button class="volver-pag3 volver">Atras</button>
+						<button class="adelante-pag5 adelante">Siguiente</button>
+					</div>
+				</div>
+
+				<!-- Página 5: Mostrar Datos -->
+				<div class="pagina">
+					<div class="pagina pagina-5">
+						<div class="titulo"><h3>Datos del Paciente</h3></div>
+						<hr>
+						<h3>DATOS PERSONALES</h3>
+						<div id="datos-personales">
+						</div>
+						<hr>
+						<h3>FAMILIARES</h3>
+						<div id="familiares"></div>
+						<hr>
+						<h3>CONDICIONES PRE-EXISTENTES  DE SALUD</h3>
+						<div id="condiciones-pre-existentes"></div>
+						<hr>
+						<h3>INTERNAMIENTOS REALIZADOS</h3>
+						<div id="internamientos-realizados"></div>
+						<hr>
+						<div class="campo btns">
+						<button class="volver-pag4 volver">Atras</button>
+						<button type="button" name="Fin" value="finalizar" id="finalizar" onclick="obtenerDatos()">Finalizar</button>
+					</div>
+				</div>  
+			</form>
+		</div>
+	</div>
+	<script src="form.JS"></script>
+</body>
+</html>
+
